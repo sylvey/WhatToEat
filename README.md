@@ -17,17 +17,17 @@
 # Coworker See here
 
 # backend
-1. create your own db in the workbench using the `CreateDB.sql` file in database.
-1. `cd backend` 
-2. Follow the steps 1, 2, 3 in create history, create the virtual environment
-3. Download packages
-   ` pip3 install -r requirements.txt`
-4. Create a `.env` under the backend folder using the template `.env_temp`. Usually, you only need the edit the password. But if you create other kind of connections, feel free to edit other environmental variants as well.
-4. Start the backend server
-   ` python3 app.py`
-5. Test（you will get an response of "hello world" ）
-   `curl http://127.0.0.1:8081/helloWorld`
 
+1. create your own db in the workbench using the `CreateDB.sql` file in database.
+1. `cd backend`
+1. Follow the steps 1, 2, 3 in create history, create the virtual environment
+1. Download packages
+   ` pip3 install -r requirements.txt`
+1. Create a `.env` under the backend folder using the template `.env_temp`. Usually, you only need the edit the password. But if you create other kind of connections, feel free to edit other environmental variants as well.
+1. Start the backend server
+   ` python3 app.py`
+1. Test（you will get an response of "hello world" ）
+   `curl http://127.0.0.1:8081/helloWorld`
 
 ### Others
 
