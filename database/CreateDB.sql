@@ -3,7 +3,7 @@ CREATE SCHEMA IF NOT EXISTS WhatToEat
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_general_ci;
 
-USE WhatToEat;
+USE WhatToEat; 
 
 -- 2. 建 tables
 CREATE TABLE `Ingredient` (
