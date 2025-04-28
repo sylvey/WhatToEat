@@ -1,11 +1,11 @@
--- 1. 建 Schema
+-- 1. Schema
 CREATE SCHEMA IF NOT EXISTS WhatToEat
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_general_ci;
 
 USE WhatToEat; 
 
--- 2. 建 tables
+-- 2. tables
 CREATE TABLE `Ingredient` (
   `IngrdID` INT AUTO_INCREMENT PRIMARY KEY,
   `IngrdName` VARCHAR(255) NOT NULL
