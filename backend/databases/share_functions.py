@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 
 
+
+
 def connect():
     load_dotenv()
     db_config = {

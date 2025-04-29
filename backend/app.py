@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from databases.database import connect
+from databases.databases import connect, recipeIngredients
 
 
 app = Flask(__name__, static_folder="build/static", template_folder="build")
@@ -14,6 +14,10 @@ def helloWorld():
     conn = connect()
     print(conn)
     return 'hello world'
+
+@app.route("/getRecipeIngredients/<OptionID>", methods=['GET'])
+def getRecipeIngredients(OptionID):  
+    return recipeIngredients(OptionID) 
 
 
 if __name__ == '__main__':
