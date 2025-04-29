@@ -1,2 +1,3 @@
 backend/WhatToEat-env
 backend/.env
+backend/databases/__pycache__
