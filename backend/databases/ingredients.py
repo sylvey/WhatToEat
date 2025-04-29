@@ -17,3 +17,19 @@ def recipeIngredients(recID):
 
     
     return result
+
+def fridgeContents():
+    db, cursor = connect()
+
+    cursor.execute(f'''
+        select Ingredient.IngrdID as IngredientID, Ingredient.IngrdName as IngredientName, Fridge.Qty as Qty
+        from Fridge
+        join Ingredient on Ingredient.IngrdID = Fridge.IngredID
+    ''')
+
+    columns = [desc[0] for desc in cursor.description]
+    result = [dict(zip(columns, row)) for row in cursor.fetchall()]
+
+    
+    return result
+
