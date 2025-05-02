@@ -23,11 +23,6 @@ def getRecipeIngredients(OptionID):
 def getFridgeContent():
     return fridgeContents()
 
-
-if __name__ == '__main__':
-    app.run('0.0.0.0', 8081, debug=True)
-
-
 @app.route('/getRestaurants', methods=['POST'])
 def route_get_restaurants():
     return get_restaurants()
@@ -35,3 +30,9 @@ def route_get_restaurants():
 @app.route('/getMenu', methods=['POST'])
 def route_get_menu():
     return get_menu()
+
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', 8081, debug=True)
+
+
