@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from databases.databases import connect, recipeIngredients, fridgeContents
+from databases.databases import connect, recipeIngredients, fridgeContents, get_menu, get_restaurants
 
 
 app = Flask(__name__, static_folder="build/static", template_folder="build")
@@ -26,3 +26,12 @@ def getFridgeContent():
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 8081, debug=True)
+
+
+@app.route('/getRestaurants', methods=['POST'])
+def route_get_restaurants():
+    return get_restaurants()
+
+@app.route('/getMenu', methods=['POST'])
+def route_get_menu():
+    return get_menu()
