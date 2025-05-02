@@ -15,7 +15,7 @@ def get_restaurants():
         SELECT DISTINCT r.RstrntID AS RestaurantID, r.RstrntName AS RestaurantName
         FROM Restaurant r
         JOIN Menu m ON r.RstrntID = m.RstrntID
-        JOIN Option o ON m.OptID = o.OptID
+        JOIN `Option` o ON m.OptID = o.OptID
         WHERE o.CuisineType = %s
           AND o.Mood = %s
           AND m.Price BETWEEN %s AND %s
@@ -40,7 +40,7 @@ def get_menu():
     query = """
         SELECT o.OptID AS MealID, o.MealName
         FROM Menu m
-        JOIN Option o ON m.OptID = o.OptID
+        JOIN `Option` o ON m.OptID = o.OptID
         WHERE m.RstrntID = %s
     """
     cursor.execute(query, (restaurant_id,))
