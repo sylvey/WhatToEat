@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, render_template, request
-from databases.databases import connect, recipeIngredients, fridgeContents, get_menu, get_restaurants, buy
+from databases.databases import connect, recipeIngredients, fridgeContents, get_menu, get_restaurants, buy, use, useRecipe
 
 
 app = Flask(__name__, static_folder="build/static", template_folder="build")
@@ -33,7 +33,24 @@ def route_get_menu():
 
 @app.route('/postBuy', methods=['POST'])
 def postBuy():
-    return buy()
+    data = request.get_json()
+    ingredientName = data.get("IngredientName")
+    qty = data.get("Qty")
+    return buy(ingredientName, qty)
+
+@app.route('/postUse', methods=['POST'])
+def postUse():
+    data = request.get_json()
+    ingredientName = data.get("IngredientName")
+    qty = data.get("Qty")
+    return use(ingredientName, qty)
+
+@app.route('/postUseRecipe', methods=['POST'])
+def postUseRecipe():
+    data = request.get_json()
+    recipeID = data.get("RecipeID")
+    IncludeOptional = data.get("IncludeOptional")
+    return useRecipe(recipeID, IncludeOptional)
 
 
 if __name__ == '__main__':

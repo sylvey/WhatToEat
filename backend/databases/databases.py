@@ -1,7 +1,7 @@
 from databases.ingredients import recipeIngredients, fridgeContents  # 把 b 裡的 func 載進來
 from databases.restaurants import get_menu, get_restaurants
 from databases.share_functions import connect
-from databases.fridge import buy
+from databases.fridge import buy, use, useRecipe
 
 __all__ = ['recipeIngredients', 
             'connect', 
@@ -9,4 +9,6 @@ __all__ = ['recipeIngredients',
             'get_menu',
             'get_restaurants',
             'buy',
+            'use',
+            'useRecipe'
         ]  
