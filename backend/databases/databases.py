@@ -2,6 +2,7 @@ from databases.ingredients import recipeIngredients, fridgeContents  # 把 b 裡
 from databases.restaurants import get_menu, get_restaurants
 from databases.share_functions import connect
 from databases.fridge import buy, use, useRecipe
+from databases.meal import available_meal_option, next_meal
 
 __all__ = ['recipeIngredients', 
             'connect', 
@@ -10,5 +11,7 @@ __all__ = ['recipeIngredients',
             'get_restaurants',
             'buy',
             'use',
-            'useRecipe'
+            'useRecipe',
+            'available_meal_option',
+            'next_meal'
         ]  
