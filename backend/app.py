@@ -37,7 +37,7 @@ def getAvailableMealOptionContent():
 
 @app.route('/getNextMeal', methods=['POST'])
 def getNextMeal():
-    option_list = available_meal_option()
+    option_list = available_meal_option_content()
     return next_meal(option_list)
 
 @app.route('/getMenu', methods=['POST'])
